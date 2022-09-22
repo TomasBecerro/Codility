@@ -1,0 +1,11 @@
+public func solution(_ A : inout [Int], _ K : Int) -> [Int] {
+    // write your code in Swift 4.2.1 (Linux)
+    if A.count == K || K == 00 || A.count == 0 {
+        return A
+    }
+    let rotacion = K % A.count 
+    let rango = 0...(A.count - 1 - rotacion)
+    let primer = A[rango]
+    A.removeSubrange(rango)
+    return A + primer 
+    }
