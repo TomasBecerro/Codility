@@ -1,0 +1,19 @@
+public func solution(_ A : inout [Int]) -> Int {
+    // write your code in Swift 4.2.1 (Linux)
+    if A.count == 1 {
+        return A[0]
+    }
+
+    var elementCount = [Int:Int]()
+    for element in A {
+        if let count = elementCount[element] {
+            elementCount[element] = count + 1
+        } else {
+            elementCount[element] = 1
+        }
+    }
+    
+    let solution = elementCount.first { (_, count) -> Bool
+        in return count%2 != 0 }
+        return solution!.key
+}
