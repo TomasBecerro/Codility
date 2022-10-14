@@ -1,0 +1,8 @@
+public func solution(_ A : inout [Int]) -> Int {
+    
+    let n = A.count + 1
+    let sumN = n * (n + 1) / 2
+    let sumA = A.reduce(0, +)
+    
+    return sumN - sumA 
+}
