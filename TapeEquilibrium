@@ -1,0 +1,19 @@
+public func minimumTapeDifference(_ A : [Int]) -> Int {
+    let totalT = A.reduce(0) { res, x in
+        res + x
+    }
+    
+    var lt = 0
+    var rt = totalT
+    var difMin = Int.max
+    let n = A.count
+    for p in 0 ..< n-1 {
+        let x = A[p]
+        lt += x
+        rt -= x
+        
+        let dif = abs(lt - rt)
+        difMin = min(difMin, dif)
+    }
+    return difMin
+}
